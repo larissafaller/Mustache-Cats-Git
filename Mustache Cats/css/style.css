@@ -1,0 +1,215 @@
+
+/*****************************************
+ GENERAL
+*****************************************/
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font: normal 1.1em/1.5 sans-serif;
+	color: #222;
+	background-color: #b2bbc2;
+}
+
+/*****************************************
+ ICONS
+*****************************************/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*****************************************
+ COLOURS
+*****************************************/
+
+.main-header       { background-color: #384047; }
+.nav-button        { background-color: #84DFE8; }
+.primary-content   { background-color: #9AFFC4; }
+.secondary-content { background-color: #A6FCFF; }
+.extra-content	   { background-color: #BBFFB8}
+.main-footer       { background-color: #f0fdff; }
+
+/*****************************************
+ MAIN LAYOUT
+*****************************************/
+
+.main-header,
+.col {
+	padding: 20px;
+}
+
+.main-logo a, 
+.main-nav a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 8px 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-button{
+	border-radius: 20px;
+
+}
+
+.main-nav a:before {
+	font-family: 'icomoon';
+  	content: attr(data-icon);
+	color: #fff;
+	position: absolute;
+	left: -30%;
+	top: 10px;
+	transition: .4s;
+}
+
+.main-nav a:hover:before {
+	left: 28%;
+}
+
+.no-flexbox a:hover:before {
+		left: 18px;
+}
+
+.main-footer {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*****************************************
+ IMAGES
+*****************************************/
+
+.feat-img,
+.cat-pic {
+	width: 100%;
+	border: solid 1px;
+	padding: 5px
+}
+
+/*****************************************
+ FLOAT CLEARFIX
+*****************************************/
+
+.group:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/*****************************************
+ MEDIA QUERIES
+*****************************************/
+
+@media (min-width: 1px) and (max-width: 768px) {
+	.main-nav li {
+		margin-top: 15px;
+	}
+
+	.main-nav li:first-child {
+		margin-top: 0;
+	}
+
+	.extra-content,
+	.main-banner {
+		display: none;
+	}
+}
+
+@media (min-width: 769px) {
+
+	body {
+		padding-top: 120px;
+	}
+
+/*****************************************
+ HEADER / BANNER LAYOUT
+*****************************************/
+
+.main-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 120px;
+}
+
+.main-nav {
+	display: flex;
+	height: 100%;
+}
+
+.main-nav li {
+	margin-left: 8px;
+	margin-right: 8px;
+	align-self: center;
+	flex-grow: 1;
+	transition: .5s;
+}
+
+.no-flexbox .main-nav li {
+	display: inline-block;
+	margin-top: 12px;
+	width: 150px;
+}
+
+.main-nav li:hover:not(.main-logo) {
+	flex-grow: 2;
+}
+
+.main-logo:first-child {
+		margin-right: 50px;
+}
+
+.main-banner {
+	background: #f0fdff;
+	text-align: center;
+	padding: 20px 15px;
+	display: block;
+}
+
+/*****************************************
+ COLUMN LAYOUT
+*****************************************/
+
+.content-row {
+	display: flex;
+}
+
+.col {
+	flex: 1;
+}
+
+.no-flexbox .col {
+	float: left;
+	width: 33.3%;
+}
+
+/*.primary-content {
+	flex: 2;
+}*/
+
+
+/*****************************************
+ IMAGES
+****************************************
+
+.feat-img {
+	width: 50%;
+	float: left;
+	margin-right: 25px;
+}
+
+}
